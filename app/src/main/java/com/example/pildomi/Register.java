@@ -19,24 +19,28 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        Intent intent = new Intent(this, Start.class);
-        saveData(intent);
+        saveData();
     }
 
-    protected void saveData(final Intent intent){
+    protected void saveData(){
         final Button _register = (Button) findViewById(R.id._register);
-         name = (EditText) findViewById(R.id._name);
-        lastname = (EditText) findViewById(R.id._name2);
-        Age = (EditText) findViewById(R.id.age);
+         this.name = (EditText) findViewById(R.id._name);
+        this.lastname = (EditText) findViewById(R.id.lastname);
+        this.Age = (EditText) findViewById(R.id.age);
         Password = (EditText) findViewById(R.id._password);
         _register.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                intent.putExtra("name", name.getText().toString());
-                intent.putExtra("lastname", lastname.getText().toString());
-                intent.putExtra("age", Age.getText().toString());
-                intent.putExtra("password", Password.getText().toString());
-                startActivity(intent);
+                startHome();
             }
         });
+    }
+
+    public  void startHome(){
+        Intent intent = new Intent(this, Start.class);
+        intent.putExtra("name", name.getText().toString());
+        intent.putExtra("lastname", lastname.getText().toString());
+        intent.putExtra("age", Age.getText().toString());
+        intent.putExtra("password", Password.getText().toString());
+        startActivity(intent);
     }
 }

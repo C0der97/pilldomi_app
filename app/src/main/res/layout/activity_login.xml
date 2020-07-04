@@ -31,14 +31,14 @@
         android:layout_marginTop="44dp"
         android:layout_marginEnd="101dp"
         android:ems="10"
-        android:hint="LastName"
-        android:inputType="textPersonName"
+        android:hint="Password"
+        android:inputType="textPersonName|textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_name2" />
+        app:layout_constraintTop_toBottomOf="@+id/_user" />
 
     <EditText
-        android:id="@+id/_name2"
+        android:id="@+id/_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
